@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_soccer_score/api_manager.dart';
-import 'package:flutter_soccer_score/pagerbody.dart';
+import 'package:flutter_soccer_score/services/soccer.dart';
+import 'package:flutter_soccer_score/widgets/body.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,27 +35,19 @@ class _SoccerAppState extends State<SoccerApp> {
         ),
         centerTitle: true,
       ),
-      //now we have finished the api service let's call it
-      //Now befo re we create Our layout let's create our API service
       body: FutureBuilder(
-        future: SoccerApi()
-            .getAllMatches(), //Here we will call our getData() method,
+        future: SoccerApi().getAllMatches(),
         builder: (context, snapshot) {
-          //the future builder is very intersting to use when you work with api
           if (snapshot.hasData) {
             print((snapshot.data).length);
-            return PageBody(snapshot.data);
+            return pageBody(snapshot.data);
           } else {
             return Center(
               child: CircularProgressIndicator(),
             );
           }
-        }, // here we will buil the app layout
+        },
       ),
     );
   }
 }
-//So as we can see w got our matches data,
-// the data size depend on the date and the time so
-// you can get as many data as many matches are curetly playing
-//Now let's try to get data by seasons and leagues

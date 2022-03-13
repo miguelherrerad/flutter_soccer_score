@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'soccermodel.dart';
+import 'package:flutter_soccer_score/models/soccer.dart';
 
 Widget matchTile(SoccerMatch match) {
   var homeGoal = match.goal.home;
@@ -29,7 +29,7 @@ Widget matchTile(SoccerMatch match) {
         ),
         Expanded(
           child: Text(
-            "${homeGoal} - ${awayGoal}",
+            "$homeGoal - $awayGoal",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,

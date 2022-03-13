@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_soccer_score/goalstat.dart';
-import 'package:flutter_soccer_score/matchtile.dart';
-import 'package:flutter_soccer_score/teamstat.dart';
-import 'soccermodel.dart';
+import 'package:flutter_soccer_score/widgets/goalstat.dart';
+import 'package:flutter_soccer_score/widgets/matchtile.dart';
+import 'package:flutter_soccer_score/widgets/teamstat.dart';
+import 'package:flutter_soccer_score/models/soccer.dart';
 
-Widget PageBody(List<SoccerMatch> allmatches) {
+Widget pageBody(List<SoccerMatch> allmatches) {
   return Column(
     children: [
       Expanded(
@@ -32,7 +32,7 @@ Widget PageBody(List<SoccerMatch> allmatches) {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Color(0xFF4373D9),
+            color: Colors.green,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40.0),
               topRight: Radius.circular(40.0),
@@ -58,12 +58,12 @@ Widget PageBody(List<SoccerMatch> allmatches) {
                       return matchTile(allmatches[index]);
                     },
                   ),
-                )
+                ),
               ],
             ),
           ),
         ),
-      )
+      ),
     ],
   );
 }

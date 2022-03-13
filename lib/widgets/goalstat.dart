@@ -13,7 +13,7 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          "${elapsed}'",
+          "$elapsed'",
           style: TextStyle(
             fontSize: 30.0,
           ),
@@ -21,7 +21,7 @@ Widget goalStat(int expandedTime, int homeGoal, int awayGoal) {
         Expanded(
           child: Center(
             child: Text(
-              "${home} - ${away}",
+              "$home - $away",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 36.0,

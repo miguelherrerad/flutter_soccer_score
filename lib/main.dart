@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_soccer_score/api_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,12 +40,16 @@ class _SoccerAppState extends State<SoccerApp> {
         centerTitle: true,
       ),
       body: FutureBuilder(
-        future: ,
-        builder: ,
+        future: SoccerApi().getAllMatches(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
       ),
-
-
-
     );
   }
 }
